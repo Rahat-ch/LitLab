@@ -36,9 +36,9 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
-require("./config/passport/passport.js");
 require("./routes/auth.js")(app, passport);
+require("./config/passport/passport.js");
+require("./routes/htmlRoutes")(app);
 
 // Load passport strategies
 require("./config/passport/passport.js")(passport, db.user);
