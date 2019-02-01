@@ -28,6 +28,9 @@ module.exports = (app, passport) => {
   app.get("/logout", (req, res) => {
     req.session.destroy(err => {
       res.redirect("/");
+      if (err) {
+        throw err;
+      }
     });
   });
 
@@ -62,7 +65,7 @@ module.exports = (app, passport) => {
   });
 
   // Load user profile page
-  app.get("/view-profile/:username", function(req, res) {
+  app.get("/view-profile/:username", isLoggedIn, function(req, res) {
     db.user
       .findOne({ where: { username: req.params.username } })
       .then(function(dbUser) {
@@ -73,6 +76,7 @@ module.exports = (app, passport) => {
   });
 
   // Load example page and pass in an example by id
+
   // app.get("/example/:id", function(req, res) {
   //   db.Posts.findOne({ where: { id: req.params.id } }).then(function() {
   //     dbPosts;
@@ -81,6 +85,7 @@ module.exports = (app, passport) => {
   //     });
   //   });
   // });
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
