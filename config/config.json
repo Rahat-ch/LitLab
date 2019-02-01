@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Dudemanguy1!",
-    "database": "exampledb",
+    "password": "password",
+    "database": "litlabDB",
     "host": "localhost",
     "dialect": "mysql"
   },

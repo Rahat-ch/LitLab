@@ -51,10 +51,10 @@ module.exports = (app, passport) => {
 
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Posts.findAll({}).then(function(dbPosts) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        posts: dbPosts
       });
     });
   });
@@ -76,14 +76,16 @@ module.exports = (app, passport) => {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", isLoggedIn, function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function() {
-      dbExample;
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
+
+  // app.get("/example/:id", function(req, res) {
+  //   db.Posts.findOne({ where: { id: req.params.id } }).then(function() {
+  //     dbPosts;
+  //     res.render("example", {
+  //       posts: dbPosts
+  //     });
+  //   });
+  // });
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
