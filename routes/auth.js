@@ -51,10 +51,10 @@ module.exports = (app, passport) => {
 
   // Load index page
   app.get("/", function(req, res) {
-    db.Posts.findAll({}).then(function(dbPosts) {
+    db.posts.findAll({}).then(function(dbposts) {
       res.render("index", {
         msg: "Welcome!",
-        posts: dbPosts
+        posts: dbposts
       });
     });
   });
@@ -85,7 +85,6 @@ module.exports = (app, passport) => {
   //     });
   //   });
   // });
-
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
