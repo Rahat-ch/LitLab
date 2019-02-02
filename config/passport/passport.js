@@ -30,6 +30,7 @@ module.exports = (passport, user) => {
       },
 
       function(req, email, password, done) {
+        console.log(req);
         var generateHash = password => {
           return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
         };
