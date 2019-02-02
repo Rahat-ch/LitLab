@@ -6,7 +6,6 @@ var session = require("express-session");
 var path = require('path');
 
 var db = require("./models");
-var User = db.user;
 
 var app = express();
 var PORT = process.env.PORT || 3000;

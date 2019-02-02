@@ -1,7 +1,6 @@
 {
   "development": {
     "username": "root",
-    "password": "Swamptreegoat5!",
     "database": "litlabDB",
     "host": "localhost",
     "dialect": "mysql"
