@@ -76,16 +76,15 @@ module.exports = (app, passport) => {
       });
   });
 
-  // Load example page and pass in an example by id
-
-  // app.get("/example/:id", function(req, res) {
-  //   db.Posts.findOne({ where: { id: req.params.id } }).then(function() {
-  //     dbPosts;
-  //     res.render("example", {
-  //       posts: dbPosts
-  //     });
-  //   });
-  // });
+  // Load home page and pass in a post by id
+  app.get("/posts/:id", function(req, res) {
+    db.posts.findOne({ where: { id: req.params.id } }).then(function() {
+      dbposts;
+      res.render("example", {
+        posts: dbposts
+      });
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
