@@ -22,7 +22,8 @@ module.exports = (app, passport) => {
   );
 
   app.get("/home", isLoggedIn, (req, res) => {
-    res.render("home");
+    console.log(req.user.username);
+    res.render("home", { user: req.user.username });
   });
 
   app.get("/logout", (req, res) => {

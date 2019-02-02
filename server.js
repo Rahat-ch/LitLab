@@ -5,6 +5,7 @@ var passport = require("passport");
 var session = require("express-session");
 
 var db = require("./models");
+var User = db.user;
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -24,6 +25,17 @@ app.use(
 ); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
+
+//render a user object - i think?
+// passport.serializeUser(function(user, done) {
+//   done(null, user.id);
+// });
+//
+// passport.deserializeUser(function(id, done) {
+//   User.findById(id, function(err, user) {
+//     done(err, user);
+//   });
+// });
 
 // Handlebars
 app.engine(
