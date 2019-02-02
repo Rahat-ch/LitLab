@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: maroon;
+  color: #999;
   text-decoration:none;
 }
 
@@ -28,9 +28,30 @@ a:hover {
   margin-right: 1em;
 }
 
+.logo-small {
+  width: 24px;
+  float: left;
+  margin-right: 1em;
+}
+
 .logo-text {
   color: #fff;
   font-size: 1.75em;
+}
+
+.navbar-dark {
+  background-color: #5B5163;
+}
+
+.user-link {
+  color: #fff;
+}
+
+.user-dropdown {
+ right: 10px;
+ left: auto;
+
+
 }
 
 #particles-js {
