@@ -1,3 +1,37 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.sign-in {
+  background: #fff;
+  max-width: 350px;
+  padding: 2em 2em 1em 2em;
+  margin-top: 10vh;
+}
+
+body {
+  background: #9A7AAB;
+}
+
+.logo {
+  width: 32px;
+  float: left;
+  margin-right: 1em;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 1.75em;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.caption {
+  font-size: 0.75em;
+  text-align: center;
+  padding-top: 1.5em;
+}
