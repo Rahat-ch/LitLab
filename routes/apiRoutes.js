@@ -16,11 +16,11 @@ module.exports = function(app) {
   });
 
   // Get posts by tag - order by last created
-  app.get("/api/posts", function(req, res) {
-    db.posts.findAll({}).then(function(dbposts) {
-      res.json(dbposts);
-    });
-  });
+  // app.get("/api/posts", function(req, res) {
+  //   db.posts.findAll({}).then(function(dbposts) {
+  //     res.json(dbposts);
+  //   });
+  // });
 
   // Delete a post by id
   // app.delete("/api/posts/:id", function(req, res) {
