@@ -1,5 +1,5 @@
 particlesJS('particles-js',
-  
+
   {
     "particles": {
       "number": {
@@ -10,10 +10,10 @@ particlesJS('particles-js',
         }
       },
       "color": {
-        "value": "#ffffff"
+        "value": "#feefff"
       },
       "shape": {
-        "type": "circle",
+        "type": "triangle",
         "stroke": {
           "width": 0,
           "color": "#000000"
@@ -50,7 +50,7 @@ particlesJS('particles-js',
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#ffffff",
+        "color": "#ff5f5f",
         "opacity": 0.4,
         "width": 1
       },
@@ -72,6 +72,7 @@ particlesJS('particles-js',
       "detect_on": "canvas",
       "events": {
         "onhover": {
+          // oringinal false
           "enable": false,
           "mode": "repulse"
         },
