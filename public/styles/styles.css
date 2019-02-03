@@ -4,13 +4,24 @@
 
 .sign-in {
   background: #fff;
-  max-width: 380px;
-  padding: 2em 2em 1em 2em;
-  margin-top: 10vh;
+  max-width: 390px;
+  padding: 1.5em 1.5em 1em 1.5em;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+html {
+  height: 100%;
+}
+body {
+  background: rgb(85, 0, 16);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875em;
+  height: 100%;
 }
 
-body {
-  background: #9A7AAB;
+.wrapper {
+  height: 100vh;
+  background-color: rgb(198, 198, 198);
 }
 
 a {
@@ -21,26 +32,64 @@ a:hover {
   color: #999;
   text-decoration:none;
 }
+.proj-title {
+  font-weight: 700;
+  font-size: 1em;
+  margin-bottom: 0.175rem;
+}
+
+.author-attr {
+  color: #999;
+  font-size: 0.875em;
+  margin-bottom: 0.25rem;
+}
+
+.type-icon {
+  float: left;
+  margin-right: 0.5em;
+  color: #ccc;
+}
+
+.proj-desc {
+  font-size: 0.875em;
+  margin-bottom: 0.25rem;
+  display: none;
+}
+
+.browse-feed {
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
+  padding-bottom: 50px;
+}
+
+h4 {
+  font-weight: 700;
+  color: #333;
+}
 
 .logo {
-  width: 32px;
-  float: left;
-  margin-right: 1em;
+  width: 40px;
+  height: 40px;
 }
 
 .logo-small {
   width: 24px;
   float: left;
-  margin-right: 1em;
 }
 
 .logo-text {
   color: #fff;
-  font-size: 1.75em;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .navbar-dark {
-  background-color: #5B5163;
+  background: rgb(206, 0, 0);
+}
+
+.nav-link {
+  color: #fff !important;
 }
 
 .user-link {
@@ -50,8 +99,10 @@ a:hover {
 .user-dropdown {
  right: 10px;
  left: auto;
+}
 
-
+.dropdown-item {
+  font-size: 0.875em;
 }
 
 #particles-js {
@@ -61,7 +112,74 @@ a:hover {
 }
 
 .caption {
-  font-size: 0.75em;
+  font-size: 1em;
   text-align: center;
   padding-top: 1.5em;
+}
+
+.login-prompt {
+  text-align: center;
+}
+
+.leftnav {
+  position: relative;
+  height: 100vh;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.865);
+}
+
+.category-select {
+  padding-top: 0.375em;
+}
+.btn-new {
+  background-color: #2A3F54;
+}
+
+.leftsubnav {
+  height: 48px;
+  font-size: 0.875em;
+  font-weight: 700;
+  line-height: 3.8;
+  width: inherit;
+  margin: 0 !important;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.leftsubnav-text {
+  float: left;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.styled-select.slate select {
+  border: 0px;
+  font-size: 1em;
+  margin-left: 50px;
+  width: 80px;
+  background: transparent;
+}
+
+select {
+  text-align-last: right;
+}
+option { direction: rtl;}
+
+.signup-text {
+  font-size: 1.125em;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+table td {
+  border-top: 0 !important;
+  border-bottom: 1px solid #d0d0d0;
 }

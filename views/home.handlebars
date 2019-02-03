@@ -1,51 +1,136 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#"> <img class="logo-small" src="/images/logo.png"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    <div class="w-100 order-1 order-md-0 dual-collapse2">
-        
-            <div class="navbar-collapse collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active mr-3">
-                    <a class="nav-link" href="#">Browse<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item mr-3">
-                    <a class="nav-link" href="#">Dashboard</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Create
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">New Story</a>
-                    <a class="dropdown-item" href="#">New Poem</a>
-                    <a class="dropdown-item" href="#">New Song</a>
+<div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"> <img class="logo-small" src="/images/logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="w-100 order-1 order-md-0 dual-collapse2">
+            
+                <div class="navbar-collapse collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active mr-3">
+                        <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">New Story</a>
+                        <a class="dropdown-item" href="#">New Poem</a>
+                        <a class="dropdown-item" href="#">New Song</a>
+                        </div>
+                    </li>
+                    
+                    </ul>
                     </div>
-                </li>
-                
-                </ul>
-                </div>
-    </div>
-
-
-
-    <div class="w-100 nav-item dropdown navbar-collapse collapse order-2 dual-collapse2">
-        <div class="navbar-nav ml-auto">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{user}}
-        </a>
-        <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="#">Sign Out</a>
         </div>
+
+
+
+        <div class="w-100 nav-item dropdown navbar-collapse collapse order-2 dual-collapse2">
+            <div class="navbar-nav ml-auto">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user}}
+            </a>
+            <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+            </div>
+            </div>
+        </div>
+
+
+
+    </nav>
+    <div class="leftnav">
+        <div class="leftsubnav row justify-content-between">
+            <div class="col">
+            <p class="leftsubnav-text">Your Feed</p>
+            </div>
+            <div class="col">
+            <form class="category-select">
+                <div class="styled-select slate">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                        <option>All</option>
+                        <option>Stories</option>
+                        <option>Poems</option>
+                        <option>Songs</option>
+                        </select>
+                    </div>
+            </form>
+            </div>
+        </div>
+        <div class="browse-feed">
+        <table class="table">
+            <tbody>
+                <tr>
+                <td class="browse-row">
+                    <h3 class="proj-title">A Wrinkle In Time</h3>
+                    <i class="fas fa-book type-icon"></i><p class="author-attr">by <span class="author-name">stephenkingrocks</span> • 5 hours ago</p>
+                    <p class="proj-desc">Three kids journey to a strange dimension to find Jesus.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    <h3 class="proj-title">The Raven</h3>
+                    <i class="fas fa-feather-alt type-icon"></i><p class="author-attr">by <span class="author-name">edgarallenprose</span> • 6 hours ago</p>
+                    <p class="proj-desc">And so hark the raven, for nevermore.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    
+                    <h3 class="proj-title">Always Be My Baby</h3>
+                    <i class="fas fa-music type-icon"></i><p class="author-attr">by <span class="author-name">mariahcarey</span> • 6 hours ago</p>
+                    <p class="proj-desc">Do Do DO DOOOOOO do do do do do do DOOOOOOOOOOOO do do DOOOOOO DOOOOOOOOOOOOOO</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    
+                    <h3 class="proj-title">Harry Potter and the Chamber of Secrets</h3>
+                    <i class="fas fa-book type-icon"></i><p class="author-attr">by <span class="author-name">J. K. Rowling</span> • 7 hours ago</p>
+                    <p class="proj-desc">Three kids journey to a strange country to kill Satan.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    
+                    <h3 class="proj-title">Green Eggs and Ham</h3>
+                    <i class="fas fa-feather-alt type-icon"></i><p class="author-attr">by <span class="author-name">shelly</span> • 8 hours ago</p>
+                    <p class="proj-desc">No I won't have green eggs and ham, I won't have it on a train, or on a plane.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    
+                    <h3 class="proj-title">Africa</h3>
+                    <i class="fas fa-music type-icon"></i><p class="author-attr">by <span class="author-name">ToTo</span> • 8 hours ago</p>
+                    <p class="proj-desc">I bless the rains down in Africaaaaa</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    <h3 class="proj-title">Lose Yourself</h3>
+                    <i class="fas fa-music type-icon"></i>
+                    <p class="author-attr">by <span class="author-name">Eminem</span> • 8 hours ago</p>
+                    <p class="proj-desc">Mom's spaghetti</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="browse-row">
+                    <h3 class="proj-title">Charlotte's Web</h3>
+                    <i class="fas fa-book type-icon"></i>
+                    <p class="author-attr">by <span class="author-name">E. B. White</span> • 10 hours ago</p>
+                    <p class="proj-desc">Mom's spaghetti</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         </div>
     </div>
-
-
-
-  </div>
-</nav>
+</div>
   
 
   
