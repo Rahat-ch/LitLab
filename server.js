@@ -3,7 +3,6 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require("express-session");
-var path = require('path');
 
 var db = require("./models");
 
