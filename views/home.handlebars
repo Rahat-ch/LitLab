@@ -13,12 +13,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Write
+                        Create
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#"><i class="fas fa-book menu-icon"></i>New Story</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-feather-alt menu-icon"></i>New Poem</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-music menu-icon"></i>New Song</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#storyModal"><i class="fas fa-book menu-icon"></i>New Story</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#poemModal"><i class="fas fa-feather-alt menu-icon"></i>New Poem</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#songModal"><i class="fas fa-music menu-icon"></i>New Song</a>
                         </div>
                     </li>
 
@@ -43,6 +43,119 @@
 
 
     </nav>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="storyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="storyModalLabel">Create New Story</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+        <div class="form-group">
+            <label for="titleInput">Story Title</label>
+            <input type="text" class="form-control" id="titleInput" aria-describedby="titleHelp" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="descInput">Story Description</label>
+            <input type="text" class="form-control" id="descInput" placeholder="Enter description">
+        </div>
+        <p class="genre-label">Genres</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="adventureCheck">
+                    <label class="form-check-label" for="adventureCheck">Adventure</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="childrenCheck">
+                    <label class="form-check-label" for="childrenCheck">Children</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="educationalCheck">
+                    <label class="form-check-label" for="educationalCheck">Educational</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="fantasyCheck">
+                    <label class="form-check-label" for="fatnasyCheck">Fantasy</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="historicalCheck">
+                    <label class="form-check-label" for="historicalCheck">Historical</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="literaryCheck">
+                    <label class="form-check-label" for="literaryCheck">Literary</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="mysteryCheck">
+                    <label class="form-check-label" for="mysteryCheck">Mystery</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="philosophicalCheck">
+                    <label class="form-check-label" for="philosophicalCheck">Philosophical</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="politicalCheck">
+                    <label class="form-check-label" for="politicalCheck">Political</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="pulpCheck">
+                    <label class="form-check-label" for="pulpCheck">Pulp</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="religiousCheck">
+                    <label class="form-check-label" for="religiousCheck">Religious</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="romanticCheck">
+                    <label class="form-check-label" for="romanticCheck">Romantic</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="horrorCheck">
+                    <label class="form-check-label" for="horrorCheck">Horror</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="scifiCheck">
+                    <label class="form-check-label" for="scifiCheck">Sci-Fi</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="thrillerCheck">
+                    <label class="form-check-label" for="thrillerCheck">Thriller</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="westernCheck">
+                    <label class="form-check-label" for="westernCheck">Western</label>  
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer mt-3">
+        <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+        </form>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
     <div class="container-fluid">
     <div class="wrapper row">
     <div class="leftnav col">
