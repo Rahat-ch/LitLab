@@ -2,6 +2,10 @@
   line-height: 2.5;
 }
 
+.form-check {
+  padding-bottom: 0.5em;
+}
+
 .sign-in {
   background: white;
   max-width: 390px;
