@@ -1,29 +1,29 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md">
-            <form id="signup" name="signup" method="post" action="/signup">
+<div id="particles-js"></div>
+<div class="row pt-5 unselectable">
+  <div class="col d-flex justify-content-center">
+  <img class="logo mr-2" src="/images/logored.svg"><h1 class="logo-text">LitLab</h1>
+  </div>
+
+</div>
+<div class="container unselectable">
+  <div class="row d-flex justify-content-center">
+    <div class="col sign-in rounded mt-4">
+      <h4 class="mb-3">Get your labcoat ready.</h4>
+      <p class="signup-text">LitLab is a collaborative writing tool that allows anyone to create awesome stories, songs, and poetry to share with the world.</p>
+      <form id="signup" name="signup" method="post" action="/signup">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" class="form-control">
+                    <input type="text" name="username" class="form-control" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-danger btn-block">Sign Up</button>
             </form>
-        </div>
+      <p class="caption">Already a member? <a href="/signin">Sign in.</a></p>
     </div>
+  </div>
 </div>
+

@@ -1,3 +1,339 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.sign-in {
+  background: white;
+  max-width: 390px;
+  padding: 1.5em 1.5em 1em 1.5em;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ccc;
+}
+html {
+  height: 100%;
+}
+body {
+  background: #f8f9fa;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875em;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: #fff;
+}
+
+a {
+  color: red
+}
+
+a:hover {
+  color: #999;
+  text-decoration:none;
+}
+.proj-title {
+  font-weight: 700;
+  font-size: 1em;
+  margin-bottom: 0.175rem;
+}
+
+.author-attr {
+  color: #999;
+  font-size: 0.875em;
+  margin-bottom: 0.25rem;
+}
+
+.main-cap {
+  min-width: 300px;
+}
+
+.type-icon {
+  float: left;
+  margin-right: 0.5em;
+  color: #ccc;
+  line-height: 1.3;
+}
+
+.menu-icon {
+  margin-right: 0.75em;
+}
+
+
+.add-icon {
+  width: 20px;
+  height: auto;
+}
+
+.add-icon-text {
+  font-size: 1.25em;
+  text-align: right;
+}
+.number-cap {
+  padding-right: 0.5em !important;
+  color: #ccc;
+}
+
+.section-title {
+  font-size: 1em;
+  font-weight: 700;
+  padding: 1em 0 0 3em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.proj-desc {
+  font-size: 0.875em;
+  margin-bottom: 0.25rem;
+  display: none;
+}
+
+.favorites-feed {
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
+  padding-bottom: 50px;
+}
+
+.content-area {
+  height: calc(100vh - 54px);
+  width: calc(100vw - 300px);
+  margin-left: 0px;
+}
+
+h4 {
+  font-weight: 700;
+  color: #333;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-small {
+  width: 24px;
+  float: left;
+}
+
+.logo-text {
+  color: #333;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.nav-link {
+  color: black !important;
+  font-weight: 400;
+}
+
+
+.leftnavbg {
+  background: #FAF9F8;
+}
+
+.leftnav-submenu {
+  margin: 0;
+}
+
+.leftnav-submenu-col {
+  padding: 0;
+}
+
+/* .nav-tabs {
+  padding-left: 15px;
+  padding-right: 15px;
+} */
+
+.navbar .nav-link {
+  font-weight: 700;
+}
+
+.nav-tabs {
+  font-size: 0.875em;
+}
+
+.navbar {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.user-link {
+  color: #fff;
+}
+
+.user-dropdown {
+ right: 10px;
+ left: auto;
+}
+
+.dropdown-item {
+  font-size: 0.875em;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.caption {
+  font-size: 1em;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+.login-prompt {
+  text-align: center;
+}
+
+.leftnav {
+  height: 100vh;
+  -ms-flex: 0 0 300px;
+  flex: 0 0 300px;
+  padding: 0;
+  border-right: 1px solid #ccc; 
+}
+
+.category-select {
+  padding-top: 0.375em;
+}
+.btn-new {
+  background-color: #2A3F54;
+}
+
+.leftsubnav {
+  height: 48px;
+  font-size: 0.875em;
+  font-weight: 700;
+  line-height: 3.8;
+  width: inherit;
+  margin: 0 !important;
+  text-transform: uppercase;
+}
+
+.leftsubnav-text {
+  float: left;
+}
+
+.leftsubnav-items {
+  padding-right: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.styled-select.slate select {
+  border: 0px;
+  font-size: 1em;
+  width: 90px;
+  background: transparent;
+}
+
+select {
+  text-align-last: right;
+}
+option { direction: rtl;}
+
+.signup-text {
+  font-size: 1.125em;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.favorites td {
+  border-top: 0 !important;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.theme-caption {
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.theme-title {
+  font-weight: 700;
+}
+
+.theme-text {
+  line-height: 1.75;
+  padding-top: 0.75em;
+}
+
+.hero-img {
+  float: right;
+  padding: 1rem;
+}
+
+.rightnav {
+  -ms-flex: 0 0 300px;
+  flex: 0 0 300px;
+  border-left: 1px solid #ccc;
+  background: #FAF9F8;
+}
+
+.left-subnav-item {
+  padding-left: 1em;
+}
+
+.category-filter{
+padding: 0;
+
+}
+
+.inactive-menu-item {
+  color: #ccc;
+}
+
+.content-container {
+  background: white;
+  padding: 0.5em;
+  overflow-y: scroll;
+}
+
+
+.main-feed td {
+  border: 0;
+  padding-left: 0;
+}
+
+.main-feed th {
+  border: 0;
+  width: 40px;
+  font-size: 1.125em;
+  color: #ccc;
+  text-align: right;
+  padding-left: 5px;
+}
+
+.main-title {
+  margin-bottom: 0;
+  font-weight: 700;
+  color: #666;
+}
+
+.main-description {
+  margin-bottom: 0;
+}
+
+.tagline {
+  margin-bottom: 0;
+  font-size: 0.875em;
+}
+
+.tagline > a {
+  color: #999;
+  text-decoration: underline;
+  margin-right: 0.5em;
+}

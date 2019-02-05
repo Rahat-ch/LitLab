@@ -53,7 +53,7 @@ module.exports = (app, passport) => {
   // Load index page
   app.get("/", function(req, res) {
     db.posts.findAll({}).then(function(dbposts) {
-      res.render("index", {
+      res.render("signin", {
         msg: "Welcome!",
         posts: dbposts
       });
