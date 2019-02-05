@@ -1,10 +1,24 @@
-var particlesJS = require('particle.js')
+// var particlesJS = require('particle.js')
 
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+
+var socket = io();
+
+socket.on("connect", function() {
+  console.log("Connected to Server");
+})
+
+socket.on("disconnect", function() {
+  console.log("Disconnected from Server");
+})
+
+socket.on("newMessage", function(message){
+  console.log("newMessage", message);
+})
 
 // The API object contains methods for each kind of request we'll make
 var API = {

@@ -5,10 +5,38 @@ var passport = require("passport");
 var session = require("express-session");
 var path = require('path');
 
+var http = require("http");
+var socketIO = require("socket.io");
+
 var db = require("./models");
 
+const {generateMessage} = require("./utils/message");
 var app = express();
 var PORT = process.env.PORT || 3000;
+var server = http.createServer(app);
+var io = socketIO(server);
+
+//socket
+
+io.on("connection", (socket) => {
+  console.log("New user Connected");
+
+  socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Labe"));
+
+  socket.broadcast.emit(
+    "newMessage",
+    generateMessage("Admin", "New User joined")
+  );
+
+  socket.on("createMesage", (message) => {
+    console.log("createMesage", message);
+    io.emit("newMessage", generateMessage(message.from, message.text));
+  })
+
+  socket.on("disconnect", () => {
+    console.log("User was disconnected");
+  })
+})
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -64,7 +92,7 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+  server.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
