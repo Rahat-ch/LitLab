@@ -341,3 +341,51 @@ padding: 0;
   text-decoration: underline;
   margin-right: 0.5em;
 }
+
+#messages {
+  list-style-type: none;
+  padding: 15px;
+  max-width: 300px;
+}
+
+#messages > li {
+  margin-bottom: 0.75em;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.rightsubnav {
+  border-bottom: 1px solid #ccc;
+  padding-left: 15px;
+}
+
+.rightnav {
+  padding: 0;
+}
+
+.chat-input {
+  padding: 0.5em;
+}
+
+.chat-area {
+  text-align: center;
+}
+
+.chat-button {
+  margin-right: 0.875em;
+}
+
+*:focus {
+  outline: none;
+}
+
+textarea:focus {
+outline: rgb(196, 116, 116) solid 2px;
+}
+
+
+select:focus {
+  outline:red 1px;
+}

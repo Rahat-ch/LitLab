@@ -631,11 +631,17 @@
             </table>
         </div>
         <div class="col rightnav">
-          <h6>Global Chat</h6>
+        <div class="leftsubnav rightsubnav">
+          <p>Global Chat</p>
+        </div>
           <ul id="messages"></ul>
           <form id="message-form">
-            <input name="message" type="text" placeholder="Message" />
-            <button>Send</button>
+            <div class="chat-area">
+            <textarea class="chat-input col-11" style="resize:none;" name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="chat-button justify-content-end d-flex">
+            <button class="btn btn-danger">Chat</button>
+            </div>
           </form>
         </div>
 
