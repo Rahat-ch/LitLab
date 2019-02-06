@@ -1,10 +1,42 @@
-var particlesJS = require('particle.js')
+// var particlesJS = require('particle.js')
 
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+
+var socket = io();
+
+socket.on("connect", function() {
+  console.log("Connected to Server");
+});
+
+socket.on("disconnect", function() {
+  console.log("Disconnected from Server");
+});
+
+socket.on("newMessage", function(message){
+  console.log("newMessage", message);
+  var li = $("<li></li>");
+  var user = $(navbarDropdownMenuLink);
+  li.html(`${user[1].outerText}: ${message.text}`);
+  $("#messages").append(li)
+});
+
+
+
+$("#message-form").on("submit", function(e){
+  e.preventDefault();
+// var user = {{user}};
+  socket.emit("createMessage", {
+      from: " ",
+      // {{user}}
+    text: $("[name=message]").val()
+  }, function(){
+
+  })
+})
 
 // The API object contains methods for each kind of request we'll make
 var API = {
