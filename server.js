@@ -5,6 +5,7 @@ var passport = require("passport");
 var session = require("express-session");
 
 var db = require("./models");
+var seed = require("./seeds");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -63,6 +64,7 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
+  seed(db);
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
