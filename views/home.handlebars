@@ -47,7 +47,7 @@
 
 
 
-<!-- Modal -->
+<!-- Story Modal -->
 <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="storyModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -60,12 +60,12 @@
       <div class="modal-body">
         <form>
         <div class="form-group">
-            <label for="titleInput">Story Title</label>
-            <input type="text" class="form-control" id="titleInput" aria-describedby="titleHelp" placeholder="Enter title">
+            <label for="storytitleInput">Story Title</label>
+            <input type="text" class="form-control" id="storytitleInput" aria-describedby="titleHelp" placeholder="Enter title">
         </div>
         <div class="form-group">
-            <label for="descInput">Story Description</label>
-            <input type="text" class="form-control" id="descInput" placeholder="Enter description">
+            <label for="storydescInput">Story Description</label>
+            <input type="text" class="form-control" id="storydescInput" placeholder="Enter description">
         </div>
         <p class="genre-label">Genres</p>
         <div class="row">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="fantasyCheck">
-                    <label class="form-check-label" for="fatnasyCheck">Fantasy</label>  
+                    <label class="form-check-label" for="fantasyCheck">Fantasy</label>  
                 </div>
             </div>
             <div class="col">
@@ -152,6 +152,215 @@
   </div>
 </div>
 
+<!-- Poem Modal -->
+<div class="modal fade" id="poemModal" tabindex="-1" role="dialog" aria-labelledby="poemModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="poemModalLabel">Create New Poem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+        <div class="form-group">
+            <label for="poemtitleInput">Poem Title</label>
+            <input type="text" class="form-control" id="poemtitleInput" aria-describedby="titleHelp" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="poemdescInput">Poem Description</label>
+            <input type="text" class="form-control" id="poemdescInput" placeholder="Enter description">
+        </div>
+        <p class="genre-label">Genres</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="acrosticRadio">
+                    <label class="form-check-label" for="acrosticRadio">Acrostic</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="balladRadio">
+                    <label class="form-check-label" for="balladRadio">Ballad</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="elegyRadio">
+                    <label class="form-check-label" for="elegyRadio">Elegy</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="epicRadio">
+                    <label class="form-check-label" for="epicRadio">Epic</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="epitaphRadio">
+                    <label class="form-check-label" for="epitaphRadio">Epitaph</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="freeVerseRadio">
+                    <label class="form-check-label" for="freeVerseRadio">Free verse</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="haikuRadio">
+                    <label class="form-check-label" for="haikuRadio">Haiku</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="limerickRadio">
+                    <label class="form-check-label" for="limerickRadio">Limerick</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="lyricRadio">
+                    <label class="form-check-label" for="lyricRadio">Lyric</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="narrativeRadio">
+                    <label class="form-check-label" for="narrativeRadio">Narrative</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="odeRadio">
+                    <label class="form-check-label" for="odeRadio">Ode</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="pastoralRadio">
+                    <label class="form-check-label" for="pastoralRadio">Pastoral</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="quatrainRadio">
+                    <label class="form-check-label" for="quatrainRadio">Quatrain</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="refrainRadio">
+                    <label class="form-check-label" for="refrainRadio">Refrain</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="sonnetRadio">
+                    <label class="form-check-label" for="sonnetRadio">Sonnet</label>  
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="tankaRadio">
+                    <label class="form-check-label" for="tankaRadio">Tanka</label>  
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer mt-3">
+        <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+        </form>
+     </div>
+    </div>
+  </div>
+</div>
+
+<!-- Song Modal -->
+<div class="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="songModalLabel">Create New Song</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+        <div class="form-group">
+            <label for="songtitleInput">Song Title</label>
+            <input type="text" class="form-control" id="songtitleInput" aria-describedby="titleHelp" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="songdescInput">Song Description</label>
+            <input type="text" class="form-control" id="songdescInput" placeholder="Enter description">
+        </div>
+        <p class="genre-label">Genres</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="bluesCheck">
+                    <label class="form-check-label" for="bluesCheck">Blues</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="countryCheck">
+                    <label class="form-check-label" for="countryCheck">Country</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="electronicCheck">
+                    <label class="form-check-label" for="electronicCheck">Electronic</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="folkCheck">
+                    <label class="form-check-label" for="folkCheck">Folk</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="gospelCheck">
+                    <label class="form-check-label" for="gospelCheck">Gospel</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="hipHopCheck">
+                    <label class="form-check-label" for="hipHopCheck">Hip-Hop</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="indieCheck">
+                    <label class="form-check-label" for="indieCheck">Indie</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="jazzCheck">
+                    <label class="form-check-label" for="jazzCheck">Jazz</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="metalCheck">
+                    <label class="form-check-label" for="metalCheck">Metal</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="operaCheck">
+                    <label class="form-check-label" for="operaCheck">Opera</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="popCheck">
+                    <label class="form-check-label" for="popCheck">Pop</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="punkCheck">
+                    <label class="form-check-label" for="punkCheck">Punk</label>  
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rnbCheck">
+                    <label class="form-check-label" for="rnbCheck">R&B</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="reggaeCheck">
+                    <label class="form-check-label" for="reggaeCheck">Reggae</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rockCheck">
+                    <label class="form-check-label" for="rockCheck">Rock</label>  
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="worldCheck">
+                    <label class="form-check-label" for="worldCheck">World</label>  
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer mt-3">
+        <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+        </form>
+     </div>
+    </div>
+  </div>
+</div>
 
 
 
