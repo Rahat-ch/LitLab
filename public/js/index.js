@@ -28,7 +28,7 @@ $("#message-form").on("submit", function(e){
   e.preventDefault();
 var user = $(navbarDropdownMenuLink);
   socket.emit("createMessage", {
-      from: user[1].outerText,
+    from: user[1].outerText,
     text: $("[name=message]").val()
   }, function(){
 
