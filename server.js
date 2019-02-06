@@ -8,6 +8,7 @@ var http = require("http");
 var socketIO = require("socket.io");
 
 var db = require("./models");
+var seed = require("./seeds");
 
 const {generateMessage} = require("./utils/message");
 var app = express();
@@ -92,6 +93,7 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
+  seed();
   server.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
