@@ -1,1 +1,44 @@
-<h1>MY PROFILE</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <a class="navbar-brand" href="#"> <img class="logo-small" src="/images/logored.svg"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="w-100 order-1 order-md-0 dual-collapse2">
+
+    <div class="navbar-collapse collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active mr-3">
+          <a class="nav-link" href="#">Browse<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Create
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#storyModal"><i class="fas fa-book menu-icon"></i>New Story</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#poemModal"><i class="fas fa-feather-alt menu-icon"></i>New Poem</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#songModal"><i class="fas fa-music menu-icon"></i>New Song</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="w-100 nav-item dropdown navbar-collapse collapse order-2 dual-collapse2">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{user}}
+      </a>
+      <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/view-profile/{{user.dataValues.username}}">Profile</a>
+        <a class="dropdown-item" href="/logout">Log Out</a>
+      </div>
+    </div>
+  </div>
+
+
+
+</nav>
