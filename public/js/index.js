@@ -19,21 +19,40 @@ socket.on("disconnect", function() {
 socket.on("newMessage", function(message){
   console.log("newMessage", message);
   var li = $("<li></li>");
-  li.html(`${message.from}: ${message.text}`);
+  var userdisplayname = $.trim(message.from)
+  li.html(`<span class="user-name">` + userdisplayname + `</span>: ${message.text}`);
   $("#messages").append(li)
+  $('.chat-input').val('');
 });
 
 
 $("#message-form").on("submit", function(e){
   e.preventDefault();
+  if($("[name=message]").val().trim() !== ''){
 var user = $(navbarDropdownMenuLink);
   socket.emit("createMessage", {
     from: user[1].outerText,
     text: $("[name=message]").val()
   }, function(){
-
   })
+}
 })
+
+$(function() {
+  $("#message-form").keypress(function (e) {
+      if(e.which == 13 && $("[name=message]").val().trim() !== '') {
+          //submit form via ajax, this is not JS but server side scripting so not showing here
+          var user = $(navbarDropdownMenuLink);
+          socket.emit("createMessage", {
+            from: user[1].outerText,
+            text: $("[name=message]").val()
+          }, function(){
+          })
+          e.preventDefault();
+      }
+  });
+});
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {

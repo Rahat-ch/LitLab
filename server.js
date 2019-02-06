@@ -23,10 +23,10 @@ io.on("connection", socket => {
 
   socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Lab"));
 
-  socket.broadcast.emit(
-    "newMessage",
-    generateMessage("Admin", "New User joined")
-  );
+  // socket.broadcast.emit(
+  //   "newMessage",
+  //   generateMessage("Admin", "New User joined")
+  // );
 
   socket.on("createMessage", (message, callback) => {
     console.log("createMessage", message);
