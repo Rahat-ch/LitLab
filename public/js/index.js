@@ -19,19 +19,16 @@ socket.on("disconnect", function() {
 socket.on("newMessage", function(message){
   console.log("newMessage", message);
   var li = $("<li></li>");
-  var user = $(navbarDropdownMenuLink);
-  li.html(`${user[1].outerText}: ${message.text}`);
+  li.html(`${message.from}: ${message.text}`);
   $("#messages").append(li)
 });
 
 
-
 $("#message-form").on("submit", function(e){
   e.preventDefault();
-// var user = {{user}};
+var user = $(navbarDropdownMenuLink);
   socket.emit("createMessage", {
-      from: " ",
-      // {{user}}
+    from: user[1].outerText,
     text: $("[name=message]").val()
   }, function(){
 
