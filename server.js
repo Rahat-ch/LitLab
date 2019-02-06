@@ -10,7 +10,7 @@ var socketIO = require("socket.io");
 var db = require("./models");
 var seed = require("./seeds");
 
-const {generateMessage} = require("./utils/message");
+const { generateMessage } = require("./utils/message");
 var app = express();
 var PORT = process.env.PORT || 3000;
 var server = http.createServer(app);
@@ -18,7 +18,7 @@ var io = socketIO(server);
 
 //socket
 
-io.on("connection", (socket) => {
+io.on("connection", socket => {
   console.log("New user Connected");
 
   socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Lab"));
@@ -32,12 +32,12 @@ io.on("connection", (socket) => {
     console.log("createMessage", message);
     io.emit("newMessage", generateMessage(message.from, message.text));
     callback("This is from the server");
-  })
+  });
 
   socket.on("disconnect", () => {
     console.log("User was disconnected");
-  })
-})
+  });
+});
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
