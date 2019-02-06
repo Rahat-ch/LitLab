@@ -20,16 +20,17 @@ var io = socketIO(server);
 io.on("connection", (socket) => {
   console.log("New user Connected");
 
-  socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Labe"));
+  socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Lab"));
 
   socket.broadcast.emit(
     "newMessage",
     generateMessage("Admin", "New User joined")
   );
 
-  socket.on("createMesage", (message) => {
-    console.log("createMesage", message);
+  socket.on("createMessage", (message, callback) => {
+    console.log("createMessage", message);
     io.emit("newMessage", generateMessage(message.from, message.text));
+    callback("This is from the server");
   })
 
   socket.on("disconnect", () => {
