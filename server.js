@@ -21,7 +21,7 @@ var io = socketIO(server);
 io.on("connection", socket => {
   console.log("New user Connected");
 
-  socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Lab"));
+  // socket.emit("newMessage", generateMessage("Admin", "Welcome to Lit Lab"));
 
   // socket.broadcast.emit(
   //   "newMessage",
