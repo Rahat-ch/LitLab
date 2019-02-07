@@ -19,7 +19,7 @@ socket.on("disconnect", function() {
 socket.on("newMessage", function(message) {
   var out = document.getElementById("out");
   var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
-  console.log(out.scrollHeight - out.clientHeight,  out.scrollTop + 1);
+  console.log(out.scrollHeight + " - " + out.clientHeight + " - " + out.scrollTop)
   console.log("newMessage", message);
   var li = $("<li></li>");
   var userdisplayname = $.trim(message.from)
@@ -61,8 +61,9 @@ $(function() {
 });
 
 document.getElementById("out").addEventListener("wheel", function() {
+  var out = document.getElementById("out");
   var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
-  if (out.clientHeight > out.scrollTop) {
+  if (out.scrollHeight > out.clientHeight) {
     $(".chat-more").removeClass("invisible");
   }
   if(isScrolledToBottom) {
