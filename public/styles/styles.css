@@ -351,6 +351,7 @@ padding: 0;
 
 #messages > li {
   margin-top: 0.875em;
+  word-break: break-all;
 }
 
 .user-name {
