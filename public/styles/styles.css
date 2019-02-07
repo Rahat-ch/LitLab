@@ -285,6 +285,7 @@ option { direction: rtl;}
   flex: 0 0 300px;
   border-left: 1px solid #ccc;
   background: #FAF9F8;
+  padding: 0;
 }
 
 .left-subnav-item {
@@ -349,7 +350,8 @@ padding: 0;
 }
 
 #messages > li {
-  margin-bottom: 0.75em;
+  margin-top: 0.875em;
+  word-break: break-all;
 }
 
 .user-name {
@@ -359,10 +361,6 @@ padding: 0;
 .rightsubnav {
   border-bottom: 1px solid #ccc;
   padding-left: 15px;
-}
-
-.rightnav {
-  padding: 0;
 }
 
 .chat-input {
@@ -389,6 +387,7 @@ outline: rgb(196, 116, 116) solid 2px;
 select:focus {
   outline:red 1px;
 }
+<<<<<<< HEAD
 /* User Profile Page Styles */
 /* User profile pic in circle */
 /* .circlePic {
@@ -404,3 +403,35 @@ select:focus {
   margin-right: auto;
   display: block;
 }
+=======
+
+.chatbox {
+  height: calc(100vh - 203px);
+  overflow-y: auto;
+}
+
+.chatmsg {
+  background: #FAF9F8;
+  padding: 0;
+}
+
+.chatbox > ul {
+  margin: 0;
+}
+
+.chat-welcome {
+  margin: 0 !important;
+}
+
+.chat-more {
+  bottom: 105px;
+  opacity: 0.7;
+  height: 36px;
+  line-height: 2.5;
+  width: 300px;
+}
+
+
+
+
+>>>>>>> ce8877252e432e234e8b210e6a1118b5e4aefd0e
