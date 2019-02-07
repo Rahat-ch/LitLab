@@ -196,7 +196,7 @@ h4 {
   -ms-flex: 0 0 300px;
   flex: 0 0 300px;
   padding: 0;
-  border-right: 1px solid #ccc; 
+  border-right: 1px solid #ccc;
 }
 
 .category-select {
@@ -388,4 +388,19 @@ outline: rgb(196, 116, 116) solid 2px;
 
 select:focus {
   outline:red 1px;
+}
+/* User Profile Page Styles */
+/* User profile pic in circle */
+/* .circlePic {
+*/
+.image-cover {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 20px;
+  object-fit: cover;
+  object-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
