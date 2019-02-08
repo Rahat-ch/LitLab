@@ -404,8 +404,6 @@ select:focus {
   text-align: center;
 }
 
-<<<<<<< HEAD =======
-
 .chatbox {
   height: calc(100vh - 203px);
   overflow-y: auto;
@@ -432,4 +430,3 @@ select:focus {
   width: 300px;
 }
 
->>>>>>> ce8877252e432e234e8b210e6a1118b5e4aefd0e
