@@ -383,57 +383,9 @@ textarea:focus {
 outline: rgb(196, 116, 116) solid 2px;
 }
 
-
 select:focus {
   outline:red 1px;
 }
-/* Profile Page */
-.image-cover {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin: 20px;
-  object-fit: cover;
-  object-position: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-#proIcon {
-  text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .chatbox {
   height: calc(100vh - 203px);
