@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all posts
   app.get("/api/posts", function(req, res) {
-    db.Posts.findAll({ include: [db.User] }).then(function(dbPosts) {
+    db.Posts.findAll({ include: [db.User, db.Category] }).then(function(dbPosts) {
       console.log(db.Posts);
       res.json(dbPosts);
     });

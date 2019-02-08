@@ -55,7 +55,7 @@ function seed(db, syncOptions) {
   db.Tags.create({ Tag: "Western", CategoryID: "3" });
 
   db.User.create({ username: "sfattal", email: "sheriffattal94@gmail.com", password: "12345"});
-  db.Posts.create({ PostTitle: "TEST", PostContent: "TEST2", PostType: "1", UserId: "1" });
+  db.Posts.create({ PostTitle: "TEST", PostContent: "TEST2", CategoryId: "1", UserId: "1" });
 }
 
 module.exports = seed;
