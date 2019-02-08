@@ -81,7 +81,7 @@ require("./routes/auth.js")(app, passport);
 require("./config/passport/passport.js");
 
 // Load passport strategies
-require("./config/passport/passport.js")(passport, db.user);
+require("./config/passport/passport.js")(passport, db.User);
 
 var syncOptions = { force: false };
 

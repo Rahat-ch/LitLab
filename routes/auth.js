@@ -52,13 +52,14 @@ module.exports = (app, passport) => {
 
   // Load index page
   app.get("/", function(req, res) {
-    db.posts.findAll({}).then(function(dbposts) {
+    db.Posts.findAll({}).then(function(dbPosts) {
       res.render("signin", {
         msg: "Welcome!",
-        posts: dbposts
+        Posts: dbPosts
       });
     });
   });
+
 
   // Load create post page
   app.get("/new-post", (req, res) => {
@@ -67,13 +68,13 @@ module.exports = (app, passport) => {
 
   // Load user profile page
   app.get("/view-profile/:username", isLoggedIn, function(req, res) {
-    db.user
-      .findOne({ where: { username: req.params.username } })
-      .then(function(dbUser) {
-        res.render("profile", {
-          user: dbUser
-        });
+    db.User.findOne({ where: { username: req.params.username } }).then(function(
+      dbUser
+    ) {
+      res.render("profile", {
+        user: dbUser
       });
+    });
   });
 
   // Load home page and pass in a post by id

@@ -1,6 +1,11 @@
 module.exports = function(sequelize, Sequelize) {
-  var category = sequelize.define("category", {
+  var Category = sequelize.define("Category", {
     Type: { type: Sequelize.STRING }
   });
-  return category;
+
+  Category.associate = function(models) {
+    Category.hasMany(models.Posts, { onDelete: "cascade" });
+  };
+
+  return Category;
 };
