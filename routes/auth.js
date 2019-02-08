@@ -62,7 +62,7 @@ module.exports = (app, passport) => {
 
   // Load create post page
   app.get("/new-post", (req, res) => {
-    res.render("post");
+    res.render("project");
   });
 
   // Load user profile page
