@@ -16,24 +16,62 @@ socket.on("disconnect", function() {
   console.log("Disconnected from Server");
 });
 
-socket.on("newMessage", function(message){
+socket.on("newMessage", function(message) {
+  var out = document.getElementById("out");
+  var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+  console.log(out.scrollHeight + " - " + out.clientHeight + " - " + out.scrollTop)
   console.log("newMessage", message);
   var li = $("<li></li>");
-  li.html(`${message.from}: ${message.text}`);
+  var userdisplayname = $.trim(message.from)
+  li.html(`<span class="user-name">` + userdisplayname + `</span>: ${message.text}`);
   $("#messages").append(li)
+  if(isScrolledToBottom) {
+    out.scrollTop = out.scrollHeight - out.clientHeight;
+    $(".chat-more").addClass("invisible");
+  }
+  $('.chat-input').val('');
 });
 
 
 $("#message-form").on("submit", function(e){
   e.preventDefault();
+  if($("[name=message]").val().trim() !== ''){
 var user = $(navbarDropdownMenuLink);
   socket.emit("createMessage", {
     from: user[1].outerText,
     text: $("[name=message]").val()
   }, function(){
-
   })
+}
 })
+
+$(function() {
+  $("#message-form").keypress(function (e) {
+    if(e.which == 13 && $("[name=message]").val().trim() !== '') {
+      //submit form via ajax, this is not JS but server side scripting so not showing here
+      var user = $(navbarDropdownMenuLink);
+      socket.emit("createMessage", {
+        from: user[1].outerText,
+        text: $("[name=message]").val()
+      }, function(){
+          })
+          e.preventDefault();
+      }
+  });
+});
+
+document.getElementById("out").addEventListener("wheel", function() {
+  var out = document.getElementById("out");
+  var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+  if (out.scrollHeight > out.clientHeight) {
+    $(".chat-more").removeClass("invisible");
+  }
+  if(isScrolledToBottom) {
+    out.scrollTop = out.scrollHeight - out.clientHeight;
+    $(".chat-more").addClass("invisible");
+  }
+})
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {

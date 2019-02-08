@@ -630,13 +630,28 @@
             </tbody>
             </table>
         </div>
-        <div class="col rightnav">
-          <h6>Global Chat</h6>
-          <ul id="messages"></ul>
-          <form id="message-form">
-            <input name="message" type="text" placeholder="Message" />
-            <button>Send</button>
-          </form>
+        <div class="col rightnav d-flex align-content-between flex-wrap">
+
+                <div class="leftsubnav rightsubnav">
+                <p>Global Chat</p>
+                </div>
+                <div id="out" class="chatbox">
+                <ul id="messages">
+                    <li class="chat-welcome" >Welcome to the global chat room!</li>
+                </ul>
+                </div>
+                <div class="chatmsg col-12">
+                    <div class="chat-more col bg-dark position-fixed invisible"><p class="text-light text-center">View more below</p></div>
+                    <form id="message-form">
+                        <div class="chat-area">
+                        <textarea class="chat-input col-11" style="resize:none;" name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="chat-button justify-content-end d-flex">
+                        <button class="btn btn-danger btn-sm mb-5">Chat</button>
+                        </div>
+                    </form>
+                </div>
+
         </div>
 
     </div>

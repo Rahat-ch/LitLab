@@ -285,6 +285,7 @@ option { direction: rtl;}
   flex: 0 0 300px;
   border-left: 1px solid #ccc;
   background: #FAF9F8;
+  padding: 0;
 }
 
 .left-subnav-item {
@@ -341,3 +342,78 @@ padding: 0;
   text-decoration: underline;
   margin-right: 0.5em;
 }
+
+#messages {
+  list-style-type: none;
+  padding: 15px;
+  max-width: 300px;
+}
+
+#messages > li {
+  margin-top: 0.875em;
+  word-break: break-all;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.rightsubnav {
+  border-bottom: 1px solid #ccc;
+  padding-left: 15px;
+}
+
+.chat-input {
+  padding: 0.5em;
+}
+
+.chat-area {
+  text-align: center;
+}
+
+.chat-button {
+  margin-right: 0.875em;
+}
+
+*:focus {
+  outline: none;
+}
+
+textarea:focus {
+outline: rgb(196, 116, 116) solid 2px;
+}
+
+
+select:focus {
+  outline:red 1px;
+}
+
+.chatbox {
+  height: calc(100vh - 203px);
+  overflow-y: auto;
+}
+
+.chatmsg {
+  background: #FAF9F8;
+  padding: 0;
+}
+
+.chatbox > ul {
+  margin: 0;
+}
+
+.chat-welcome {
+  margin: 0 !important;
+}
+
+.chat-more {
+  bottom: 105px;
+  opacity: 0.7;
+  height: 36px;
+  line-height: 2.5;
+  width: 300px;
+}
+
+
+
+
