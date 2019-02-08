@@ -400,6 +400,10 @@ select:focus {
   display: block;
 }
 
+#proIcon {
+  text-align: center;
+}
+
 <<<<<<< HEAD =======
 
 .chatbox {
@@ -427,8 +431,5 @@ select:focus {
   line-height: 2.5;
   width: 300px;
 }
-
-
-
 
 >>>>>>> ce8877252e432e234e8b210e6a1118b5e4aefd0e
