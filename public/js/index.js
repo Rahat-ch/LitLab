@@ -1,3 +1,4 @@
+window.onload=function() {
 // var particlesJS = require('particle.js')
 
 // Get references to page elements
@@ -60,17 +61,25 @@ $(function() {
   });
 });
 
-document.getElementById("out").addEventListener("wheel", function() {
-  var out = document.getElementById("out");
-  var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
-  if (out.scrollHeight > out.clientHeight) {
-    $(".chat-more").removeClass("invisible");
-  }
-  if(isScrolledToBottom) {
-    out.scrollTop = out.scrollHeight - out.clientHeight;
-    $(".chat-more").addClass("invisible");
-  }
-})
+
+// document.getElementById("test-button").addEventListener("click", function() {
+//   console.log("you clicked a button")
+// })
+
+if(document.getElementById("out")) {
+  document.getElementById("out").addEventListener("wheel", function() {
+    var out = document.getElementById("out");
+    var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+    if (out.scrollHeight > out.clientHeight) {
+      $(".chat-more").removeClass("invisible");
+    }
+    if(isScrolledToBottom) {
+      out.scrollTop = out.scrollHeight - out.clientHeight;
+      $(".chat-more").addClass("invisible");
+    }
+  })
+}
+
 
 
 // The API object contains methods for each kind of request we'll make
@@ -167,6 +176,10 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-particlesJS.load('particles-js', 'assets/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-});
+if(document.getElementById("particles-js")) {
+  particlesJS.load('particles-js', 'assets/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+}
+
+}

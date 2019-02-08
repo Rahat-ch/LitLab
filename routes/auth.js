@@ -60,6 +60,12 @@ module.exports = (app, passport) => {
     });
   });
 
+
+  // Load create post page
+  app.get("/new-post", (req, res) => {
+    res.render("project");
+  });
+
   // Load user profile page
   app.get("/view-profile/:username", isLoggedIn, function(req, res) {
     db.User.findOne({ where: { username: req.params.username } }).then(function(
