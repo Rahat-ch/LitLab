@@ -60,6 +60,10 @@ $(function() {
   });
 });
 
+document.getElementById("test-button").addEventListener("click", function() {
+  console.log("you clicked a button")
+})
+
 document.getElementById("out").addEventListener("wheel", function() {
   var out = document.getElementById("out");
   var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
