@@ -1,6 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-  var User = sequelize.define("user", {
-    id: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
+  var User = sequelize.define("User", {
     username: { type: Sequelize.TEXT },
     email: { type: Sequelize.STRING, validate: { isEmail: true } },
     password: { type: Sequelize.STRING, allowNull: false },
@@ -9,6 +8,10 @@ module.exports = function(sequelize, Sequelize) {
       defaultValue: "active"
     }
   });
+
+  User.associate = function(models) {
+    User.hasMany(models.Posts, { onDelete: "cascade" });
+  };
 
   return User;
 };

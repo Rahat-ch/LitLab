@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
-  var category = sequelize.define("category", {
+  var Category = sequelize.define("Category", {
     Type: { type: Sequelize.STRING }
   });
-  return category;
+  return Category;
 };
