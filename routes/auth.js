@@ -60,12 +60,6 @@ module.exports = (app, passport) => {
     });
   });
 
-
-  // Load create post page
-  app.get("/new-post", (req, res) => {
-    res.render("project");
-  });
-
   // Load user profile page
   app.get("/view-profile/:username", isLoggedIn, function(req, res) {
     db.User.findOne({ where: { username: req.params.username } }).then(function(
@@ -77,12 +71,12 @@ module.exports = (app, passport) => {
     });
   });
 
-  // Load home page and pass in a post by id
-  app.get("/posts/:id", function(req, res) {
-    db.posts.findOne({ where: { id: req.params.id } }).then(function() {
-      dbposts;
-      res.render("example", {
-        posts: dbposts
+  // Load edit post page after user creates post
+  app.get("/edit-post/:id", function(req, res) {
+    db.Posts.findOne({ where: { id: req.params.id } }).then(function() {
+      dbPosts;
+      res.render("project", {
+        Posts: dbPosts
       });
     });
   });
