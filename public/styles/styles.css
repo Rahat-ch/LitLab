@@ -383,42 +383,9 @@ textarea:focus {
 outline: rgb(196, 116, 116) solid 2px;
 }
 
-
 select:focus {
   outline:red 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .chatbox {
   height: calc(100vh - 203px);
