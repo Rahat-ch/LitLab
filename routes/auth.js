@@ -23,7 +23,7 @@ module.exports = (app, passport) => {
 
   app.get("/home", isLoggedIn, (req, res) => {
     console.log(req.user.username);
-    res.render("home", { user: req.user.username });
+    res.render("home", { user: req.user.username, userId: req.user.id });
   });
 
   app.get("/logout", (req, res) => {
@@ -85,4 +85,6 @@ module.exports = (app, passport) => {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+
 };

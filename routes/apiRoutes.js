@@ -13,7 +13,12 @@ module.exports = function(app) {
 
   // Create a new post
   app.post("/api/Posts", function(req, res) {
-    db.Posts.create(req.body).then(function(dbPosts) {
+    db.Posts.create({
+        PostTitle: req.body.title,
+        PostDescription: req.body.desc,
+        CategoryId: req.body.categoryid,
+        UserId: req.body.userid
+      }).then(function(dbPosts) {
       res.json(dbPosts);
     });
   });

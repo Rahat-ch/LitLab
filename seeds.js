@@ -59,12 +59,6 @@ function seed(db, syncOptions) {
     email: "sheriffattal94@gmail.com",
     password: "12345"
   });
-  db.Posts.create({
-    PostTitle: "TEST",
-    PostContent: "TEST2",
-    CategoryId: "1",
-    UserId: "1"
-  });
 }
 
 module.exports = seed;
