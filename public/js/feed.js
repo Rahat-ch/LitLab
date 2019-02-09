@@ -67,6 +67,8 @@ $(document).ready(function() {
       var newPostCardHead = $("<th>");
       newPostCardHead.attr("scope","row")
       newPostCardHead.text(c)
+      var newPostCardLink = $("<a>")
+      newPostCardLink.attr("href","/edit-post/" + post.id)
       var newPostCardHeading = $("<h5>");
       newPostCardHeading.addClass("main-title")
       newPostCardHeading.text(post.PostTitle)
@@ -78,7 +80,8 @@ $(document).ready(function() {
       var newPostCardDesc = $("<p>");
       newPostCardDesc.addClass("main-description")
       newPostCardDesc.text(post.PostDescription)
-      newPostCardCell.append(newPostCardHeading)
+      newPostCardCell.append(newPostCardLink)
+      newPostCardLink.append(newPostCardHeading)
       newPostCardCell.append(newPostCardIcon)
       newPostCardCell.append(newPostCardAuthor)
       newPostCardCell.append(newPostCardDesc)
