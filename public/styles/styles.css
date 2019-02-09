@@ -18,14 +18,12 @@ html {
   height: 100%;
 }
 body {
-
-  background: #1D2671;  /* fallback for old browsers */
-
-  
+  background: #fff;  /* fallback for old browsers */
   font-family: 'Libre Franklin', sans-serif;
   font-size: 0.875em;
   height: 100%;
 }
+
 
 .logo-text {
   color: #fff;
@@ -184,6 +182,7 @@ h4 {
   position: absolute;
   width: 100%;
   height: 100%;
+  background: #1D2671;
 }
 
 .caption {
