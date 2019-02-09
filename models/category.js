@@ -5,7 +5,7 @@ module.exports = function(sequelize, Sequelize) {
 
   Category.associate = function(models) {
     Category.hasMany(models.Posts, { onDelete: "cascade" });
-    Category.hasMany(models.Tags);
+    // Category.hasMany(models.Tags);
   };
 
   return Category;
