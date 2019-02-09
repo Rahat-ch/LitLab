@@ -1,6 +1,5 @@
 var db = require("../models");
 
-
 module.exports = (app, passport) => {
   // app.get("/", (req, res) => {
   //   res.render("index");
@@ -53,8 +52,7 @@ module.exports = (app, passport) => {
 
   // Load index page
   app.get("/", function(req, res) {
-      res.render("signin", {
-    });
+    res.render("signin", {});
   });
 
   // Load user profile page
@@ -71,26 +69,23 @@ module.exports = (app, passport) => {
   // Load edit post page after user creates post
   app.get("/edit-post/:id", isLoggedIn, function(req, res) {
     db.Posts.findOne({ where: { id: req.params.id } }).then(function(dbPosts) {
-      var postData = dbPosts
-      console.log("your post title is", postData.dataValues.PostTitle)
+      var postData = dbPosts;
+      console.log("your post title is", postData.dataValues.PostTitle);
       res.render("project", {
         title: postData.dataValues.PostTitle,
-        user: req.user.username, 
+        user: req.user.username,
         userId: req.user.id
       });
-      
-    })
+    });
   });
 
   // Load create post page - using now just to edit the editor
- app.get("/new-post", (req, res) => {
-   res.render("project", { user: req.user.username, userId: req.user.id });
- });
+  app.get("/new-post", (req, res) => {
+    res.render("project", { user: req.user.username, userId: req.user.id });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
-
-
 };
