@@ -18,10 +18,18 @@ html {
   height: 100%;
 }
 body {
-  background: #f8f9fa;
+  background: #fff;  /* fallback for old browsers */
   font-family: 'Libre Franklin', sans-serif;
   font-size: 0.875em;
   height: 100%;
+}
+
+
+.logo-text {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .wrapper {
@@ -120,12 +128,6 @@ h4 {
   float: left;
 }
 
-.logo-text {
-  color: #333;
-  font-size: 2.5em;
-  font-weight: 700;
-  line-height: 1.25;
-}
 
 .nav-link {
   color: black !important;
@@ -160,6 +162,7 @@ h4 {
 
 .navbar {
   border-bottom: 1px solid #d0d0d0;
+  background: #fff;
 }
 
 .user-link {
@@ -179,6 +182,7 @@ h4 {
   position: absolute;
   width: 100%;
   height: 100%;
+  background: #1D2671;
 }
 
 .caption {
@@ -351,7 +355,7 @@ padding: 0;
 
 #messages > li {
   margin-top: 0.875em;
-  word-break: break-all;
+  word-break: normal;
 }
 
 .user-name {
@@ -365,6 +369,7 @@ padding: 0;
 
 .chat-input {
   padding: 0.5em;
+  border: 1px solid #ccc;
 }
 
 .chat-area {
@@ -411,4 +416,22 @@ select:focus {
   height: 36px;
   line-height: 2.5;
   width: 300px;
+}
+
+#user-id {
+  display: none;
+}
+
+.editor-area {
+  padding: 5em;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.editor-area:focus {
+  outline: none;
+}
+
+.project-title {
+  width: 50%;
 }

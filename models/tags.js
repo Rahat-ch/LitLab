@@ -4,5 +4,10 @@ module.exports = function(sequelize, Sequelize) {
     CategoryID: { type: Sequelize.TINYINT },
     PostID: { type: Sequelize.TINYINT }
   });
+
+  //   Tags.associate = function(models) {
+  //     Tags.belongsTo(models.Category, { foreignKey: { allowNull: false } });
+  //   };
+
   return Tags;
 };
