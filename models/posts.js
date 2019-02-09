@@ -1,7 +1,8 @@
 module.exports = function(sequelize, Sequelize) {
   var Posts = sequelize.define("Posts", {
     PostTitle: { type: Sequelize.STRING },
-    PostContent: { type: Sequelize.TEXT }
+    PostContent: { type: Sequelize.TEXT },
+    PostDescription: { type: Sequelize.TEXT }
   });
 
   Posts.associate = function(models) {

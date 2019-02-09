@@ -18,9 +18,9 @@ module.exports = function(app) {
     });
   });
 
-  // Get Posts by tag - order by last created
-  app.get("/api/Posts", function(req, res) {
-    db.Posts.findAll({}).then(function(dbPosts) {
+  // Edit a post
+  app.put("/api/Posts", function(req, res) {
+    db.Posts.update({ where: { id: req.params.id } }).then(function(dbPosts) {
       res.json(dbPosts);
     });
   });
