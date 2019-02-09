@@ -412,3 +412,7 @@ select:focus {
   line-height: 2.5;
   width: 300px;
 }
+
+#user-id {
+  display: none;
+}

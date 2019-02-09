@@ -72,9 +72,9 @@ module.exports = (app, passport) => {
   });
 
   // Load edit post page after user creates post
-  app.get("/edit-post/:id", function(req, res) {
-    db.Posts.findOne({ where: { id: req.params.id } }).then(function() {
-      dbPosts;
+  app.get("/edit-post/:id", isLoggedIn, function(req, res) {
+    db.Posts.findOne({ where: { id: req.params.id } }).then(function(dbPosts) {
+      
       res.render("project", {
         Posts: dbPosts
       });
