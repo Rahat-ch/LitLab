@@ -81,6 +81,11 @@ module.exports = (app, passport) => {
     });
   });
 
+  // Load create post page - using now just to edit the editor
+ app.get("/new-post", (req, res) => {
+   res.render("project");
+ });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

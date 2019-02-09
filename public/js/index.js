@@ -7,6 +7,9 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+//IMPORTANT FOR EDITOR TO WORK
+var $doc = $('#doc');
+
 var socket = io();
 
 socket.on("connect", function() {
@@ -16,6 +19,15 @@ socket.on("connect", function() {
 socket.on("disconnect", function() {
   console.log("Disconnected from Server");
 });
+
+$doc.keyup(function(e){
+    e.preventDefault();
+    socket.emit('send doc', $doc.val());
+  });
+
+socket.on('update doc', function(data){
+    $doc.val(data);
+  });
 
 socket.on("newMessage", function(message) {
   var out = document.getElementById("out");
@@ -60,11 +72,6 @@ $(function() {
       }
   });
 });
-
-
-// document.getElementById("test-button").addEventListener("click", function() {
-//   console.log("you clicked a button")
-// })
 
 if(document.getElementById("out")) {
   document.getElementById("out").addEventListener("wheel", function() {
