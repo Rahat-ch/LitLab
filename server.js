@@ -34,6 +34,19 @@ io.on("connection", socket => {
     callback("This is from the server");
   });
 
+  socket.on("send doc", function(data){
+    io.emit("update doc", data);
+  });
+
+
+
+  socket.on('update content', content => {
+   // once we get a 'change color' event from one of our clients, we will send it to the rest of the clients
+   // we make use of the socket.emit method again with the argument given to use from the callback function above
+   console.log('content updates...')
+   io.sockets.emit('update content', content)
+ })
+
   socket.on("disconnect", () => {
     console.log("User was disconnected");
   });
