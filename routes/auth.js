@@ -23,7 +23,7 @@ module.exports = (app, passport) => {
 
   app.get("/home", isLoggedIn, (req, res) => {
     console.log(req.user.username);
-    res.render("home", { user: req.user.username });
+    res.render("home", { user: req.user.username, userId: req.user.id });
   });
 
   app.get("/logout", (req, res) => {
@@ -72,9 +72,9 @@ module.exports = (app, passport) => {
   });
 
   // Load edit post page after user creates post
-  app.get("/edit-post/:id", function(req, res) {
-    db.Posts.findOne({ where: { id: req.params.id } }).then(function() {
-      dbPosts;
+  app.get("/edit-post/:id", isLoggedIn, function(req, res) {
+    db.Posts.findOne({ where: { id: req.params.id } }).then(function(dbPosts) {
+      
       res.render("project", {
         Posts: dbPosts
       });
@@ -90,4 +90,6 @@ module.exports = (app, passport) => {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+
 };

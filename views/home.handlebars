@@ -31,7 +31,7 @@
         <div class="w-100 nav-item dropdown navbar-collapse collapse order-2 dual-collapse2">
             <div class="navbar-nav ml-auto">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{user}}
+            {{user}}<span id="user-id">{{userId}}</span>
             </a>
             <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/view-profile/{{user}}">Profile</a>
@@ -58,7 +58,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="storyForm">
         <div class="form-group">
             <label for="storytitleInput">Story Title</label>
             <input type="text" class="form-control" id="storytitleInput" aria-describedby="titleHelp" placeholder="Enter title">
@@ -165,7 +165,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="poemForm">
         <div class="form-group">
             <label for="poemtitleInput">Poem Title</label>
             <input type="text" class="form-control" id="poemtitleInput" aria-describedby="titleHelp" placeholder="Enter title">
@@ -270,7 +270,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="songForm">
         <div class="form-group">
             <label for="songtitleInput">Song Title</label>
             <input type="text" class="form-control" id="songtitleInput" aria-describedby="titleHelp" placeholder="Enter title">
@@ -467,68 +467,7 @@
                     <p class="proj-desc">Mom's spaghetti</p>
                     </td>
                 </tr>
-                                <tr>
-                <td class="browse-row">
-                    <h3 class="proj-title">A Wrinkle In Time</h3>
-                    <i class="fas fa-book type-icon"></i><p class="author-attr">by <span class="author-name">stephenkingrocks</span> • updated 5 hours ago</p>
-                    <p class="proj-desc">Three kids journey to a strange dimension to find Jesus.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-                    <h3 class="proj-title">The Raven</h3>
-                    <i class="fas fa-feather-alt type-icon"></i><p class="author-attr">by <span class="author-name">edgarallenprose</span> • updated 6 hours ago</p>
-                    <p class="proj-desc">And so hark the raven, for nevermore.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-
-                    <h3 class="proj-title">Always Be My Baby</h3>
-                    <i class="fas fa-music type-icon"></i><p class="author-attr">by <span class="author-name">mariahcarey</span> • updated 6 hours ago</p>
-                    <p class="proj-desc">Do Do DO DOOOOOO do do do do do do DOOOOOOOOOOOO do do DOOOOOO DOOOOOOOOOOOOOO</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-
-                    <h3 class="proj-title">Harry Potter and the Chamber of Secrets</h3>
-                    <i class="fas fa-book type-icon"></i><p class="author-attr">by <span class="author-name">J. K. Rowling</span> • updated 7 hours ago</p>
-                    <p class="proj-desc">Three kids journey to a strange country to kill Satan.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-
-                    <h3 class="proj-title">Green Eggs and Ham</h3>
-                    <i class="fas fa-feather-alt type-icon"></i><p class="author-attr">by <span class="author-name">shelly</span> • updated 8 hours ago</p>
-                    <p class="proj-desc">No I won't have green eggs and ham, I won't have it on a train, or on a plane.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-
-                    <h3 class="proj-title">Africa</h3>
-                    <i class="fas fa-music type-icon"></i><p class="author-attr">by <span class="author-name">Toto</span> • updated 8 hours ago</p>
-                    <p class="proj-desc">I bless the rains down in Africaaaaa</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-                    <h3 class="proj-title">Lose Yourself</h3>
-                    <i class="fas fa-music type-icon"></i>
-                    <p class="author-attr">by <span class="author-name">Eminem</span> • updated 8 hours ago</p>
-                    <p class="proj-desc">Mom's spaghetti</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="browse-row">
-                    <h3 class="proj-title">Charlotte's Web</h3>
-                    <i class="fas fa-book type-icon"></i>
-                    <p class="author-attr">by <span class="author-name">E. B. White</span> • updated 10 hours ago</p>
-                    <p class="proj-desc">Mom's spaghetti</p>
-                    </td>
-                </tr>
+                              
             </tbody>
         </table>
         </div>
@@ -537,7 +476,7 @@
         <div class="col container-fluid content-container">
             <h2 class="section-title">Popular &nbsp; &nbsp;<i class="fas fa-angle-right"></i>&nbsp; &nbsp;All</h2>
             <table class="table main-feed">
-            <tbody>
+            <tbody class="blog-container">
                 <tr>
                 <th scope="row">1</th>
                     <td class="main-cap">
