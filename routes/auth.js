@@ -23,7 +23,7 @@ module.exports = (app, passport) => {
 
   app.get("/home", isLoggedIn, (req, res) => {
     console.log(req.user.username);
-    res.render("home", { user: req.user.username });
+    res.render("home", { user: req.user.username, userId: req.user.id });
   });
 
   app.get("/logout", (req, res) => {
@@ -52,42 +52,44 @@ module.exports = (app, passport) => {
 
   // Load index page
   app.get("/", function(req, res) {
-    db.posts.findAll({}).then(function(dbposts) {
+    db.Posts.findAll({}).then(function(dbPosts) {
       res.render("signin", {
         msg: "Welcome!",
-        posts: dbposts
+        Posts: dbPosts
       });
     });
-  });
-
-  // Load create post page
-  app.get("/new-post", (req, res) => {
-    res.render("project");
   });
 
   // Load user profile page
   app.get("/view-profile/:username", isLoggedIn, function(req, res) {
-    db.user
-      .findOne({ where: { username: req.params.username } })
-      .then(function(dbUser) {
-        res.render("profile", {
-          user: dbUser
-        });
-      });
-  });
-
-  // Load home page and pass in a post by id
-  app.get("/posts/:id", function(req, res) {
-    db.posts.findOne({ where: { id: req.params.id } }).then(function() {
-      dbposts;
-      res.render("example", {
-        posts: dbposts
+    db.User.findOne({ where: { username: req.params.username } }).then(function(
+      dbUser
+    ) {
+      res.render("profile", {
+        user: dbUser
       });
     });
   });
+
+  // Load edit post page after user creates post
+  app.get("/edit-post/:id", isLoggedIn, function(req, res) {
+    db.Posts.findOne({ where: { id: req.params.id } }).then(function(dbPosts) {
+      
+      res.render("project", {
+        Posts: dbPosts
+      });
+    });
+  });
+
+  // Load create post page - using now just to edit the editor
+ app.get("/new-post", (req, res) => {
+   res.render("project");
+ });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+
 };

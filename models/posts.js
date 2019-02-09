@@ -1,9 +1,14 @@
 module.exports = function(sequelize, Sequelize) {
-  var posts = sequelize.define("posts", {
+  var Posts = sequelize.define("Posts", {
     PostTitle: { type: Sequelize.STRING },
     PostContent: { type: Sequelize.TEXT },
-    Author: { type: Sequelize.STRING },
-    PostType: { type: Sequelize.STRING }
+    PostDescription: { type: Sequelize.TEXT }
   });
-  return posts;
+
+  Posts.associate = function(models) {
+    Posts.belongsTo(models.User, { foreignKey: { allowNull: false } });
+    Posts.belongsTo(models.Category, { foreignKey: { allowNull: false } });
+  };
+
+  return Posts;
 };
