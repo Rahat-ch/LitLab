@@ -1,21 +1,377 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md">
-      <h2>Congratulations!</h2>
-      <h5>You have logged in successfully.</h5>
-      <div>
-        <h3>
-          Here's the TextEdit component.
-        </h3>
-        <textarea
-          rows="10" cols="50"
-          placeholder="Write something here..."
-          id="doc"
-          >
-        </textarea>
-        <button id="test-button">Submit</button>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/home"> <img class="logo-small" src="/images/logored.svg"></a>
+        <div class="project-title">{{title}}</div>
+
+
+        <div class="w-100 nav-item dropdown navbar-collapse collapse order-2 dual-collapse2">
+            <div class="navbar-nav ml-auto">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user}}<span id="user-id">{{userId}}</span>
+            </a>
+            <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/view-profile/{{user}}">Profile</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+            </div>
+            </div>
+        </div>
+
+
+
+    </nav>
+
+
+
+
+<!-- Story Modal -->
+<div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="storyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="storyModalLabel">Create New Story</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <a class="btn btn-primary" href="/logout" role="button">Sign Out</a>
+      <div class="modal-body">
+        <form id="storyForm">
+        <div class="form-group">
+            <label for="storytitleInput">Story Title</label>
+            <input type="text" class="form-control" id="storytitleInput" aria-describedby="titleHelp" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="storydescInput">Story Description</label>
+            <input type="text" class="form-control" id="storydescInput" placeholder="Enter description">
+        </div>
+        <p class="genre-label">Genres</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="adventureCheck">
+                    <label class="form-check-label" for="adventureCheck">Adventure</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="childrenCheck">
+                    <label class="form-check-label" for="childrenCheck">Children</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="educationalCheck">
+                    <label class="form-check-label" for="educationalCheck">Educational</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="fantasyCheck">
+
+                    <label class="form-check-label" for="fantasyCheck">Fantasy</label>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="historicalCheck">
+                    <label class="form-check-label" for="historicalCheck">Historical</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="literaryCheck">
+                    <label class="form-check-label" for="literaryCheck">Literary</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="mysteryCheck">
+                    <label class="form-check-label" for="mysteryCheck">Mystery</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="philosophicalCheck">
+                    <label class="form-check-label" for="philosophicalCheck">Philosophical</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="politicalCheck">
+                    <label class="form-check-label" for="politicalCheck">Political</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="pulpCheck">
+                    <label class="form-check-label" for="pulpCheck">Pulp</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="religiousCheck">
+                    <label class="form-check-label" for="religiousCheck">Religious</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="romanticCheck">
+                    <label class="form-check-label" for="romanticCheck">Romantic</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="horrorCheck">
+                    <label class="form-check-label" for="horrorCheck">Horror</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="scifiCheck">
+                    <label class="form-check-label" for="scifiCheck">Sci-Fi</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="thrillerCheck">
+                    <label class="form-check-label" for="thrillerCheck">Thriller</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="westernCheck">
+                    <label class="form-check-label" for="westernCheck">Western</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer mt-3">
+        <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+        </form>
+     </div>
     </div>
   </div>
 </div>
+
+<!-- Poem Modal -->
+<div class="modal fade" id="poemModal" tabindex="-1" role="dialog" aria-labelledby="poemModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="poemModalLabel">Create New Poem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="poemForm">
+        <div class="form-group">
+            <label for="poemtitleInput">Poem Title</label>
+            <input type="text" class="form-control" id="poemtitleInput" aria-describedby="titleHelp" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="poemdescInput">Poem Description</label>
+            <input type="text" class="form-control" id="poemdescInput" placeholder="Enter description">
+        </div>
+        <p class="genre-label">Genres</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="acrosticRadio">
+                    <label class="form-check-label" for="acrosticRadio">Acrostic</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="balladRadio">
+                    <label class="form-check-label" for="balladRadio">Ballad</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="elegyRadio">
+                    <label class="form-check-label" for="elegyRadio">Elegy</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="epicRadio">
+                    <label class="form-check-label" for="epicRadio">Epic</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="epitaphRadio">
+                    <label class="form-check-label" for="epitaphRadio">Epitaph</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="freeVerseRadio">
+                    <label class="form-check-label" for="freeVerseRadio">Free verse</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="haikuRadio">
+                    <label class="form-check-label" for="haikuRadio">Haiku</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="limerickRadio">
+                    <label class="form-check-label" for="limerickRadio">Limerick</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="lyricRadio">
+                    <label class="form-check-label" for="lyricRadio">Lyric</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="narrativeRadio">
+                    <label class="form-check-label" for="narrativeRadio">Narrative</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="odeRadio">
+                    <label class="form-check-label" for="odeRadio">Ode</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="pastoralRadio">
+                    <label class="form-check-label" for="pastoralRadio">Pastoral</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="quatrainRadio">
+                    <label class="form-check-label" for="quatrainRadio">Quatrain</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="refrainRadio">
+                    <label class="form-check-label" for="refrainRadio">Refrain</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="sonnetRadio">
+                    <label class="form-check-label" for="sonnetRadio">Sonnet</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="poem-genre-radio" id="tankaRadio">
+                    <label class="form-check-label" for="tankaRadio">Tanka</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer mt-3">
+        <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+        </form>
+     </div>
+    </div>
+  </div>
+</div>
+
+<!-- Song Modal -->
+<div class="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="songModalLabel">Create New Song</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="songForm">
+        <div class="form-group">
+            <label for="songtitleInput">Song Title</label>
+            <input type="text" class="form-control" id="songtitleInput" aria-describedby="titleHelp" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="songdescInput">Song Description</label>
+            <input type="text" class="form-control" id="songdescInput" placeholder="Enter description">
+        </div>
+        <p class="genre-label">Genres</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="bluesCheck">
+                    <label class="form-check-label" for="bluesCheck">Blues</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="countryCheck">
+                    <label class="form-check-label" for="countryCheck">Country</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="electronicCheck">
+                    <label class="form-check-label" for="electronicCheck">Electronic</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="folkCheck">
+                    <label class="form-check-label" for="folkCheck">Folk</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="gospelCheck">
+                    <label class="form-check-label" for="gospelCheck">Gospel</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="hipHopCheck">
+                    <label class="form-check-label" for="hipHopCheck">Hip-Hop</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="indieCheck">
+                    <label class="form-check-label" for="indieCheck">Indie</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="jazzCheck">
+                    <label class="form-check-label" for="jazzCheck">Jazz</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="metalCheck">
+                    <label class="form-check-label" for="metalCheck">Metal</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="operaCheck">
+                    <label class="form-check-label" for="operaCheck">Opera</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="popCheck">
+                    <label class="form-check-label" for="popCheck">Pop</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="punkCheck">
+                    <label class="form-check-label" for="punkCheck">Punk</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rnbCheck">
+                    <label class="form-check-label" for="rnbCheck">R&B</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="reggaeCheck">
+                    <label class="form-check-label" for="reggaeCheck">Reggae</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rockCheck">
+                    <label class="form-check-label" for="rockCheck">Rock</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="worldCheck">
+                    <label class="form-check-label" for="worldCheck">World</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer mt-3">
+        <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+        </form>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <div class="content-area row justify-content-between" style="width: 100vw;">
+        <div class="col container-fluid content-container text-center bg-light">
+            <textarea class="editor-area" rows="30" cols="70" placeholder="Write something here..." id="doc"></textarea>
+        </div>
+        <div class="col rightnav d-flex align-content-between flex-wrap">
+
+                <div class="leftsubnav rightsubnav">
+                <p>Project Chat</p>
+                </div>
+                <div id="out" class="chatbox">
+                <ul id="messages">
+                    <li class="chat-welcome" >Welcome to the chatroom for "{{title}}".</li>
+                </ul>
+                </div>
+                <div class="chatmsg col-12">
+                    <div class="chat-more col bg-dark position-fixed invisible"><p class="text-light text-center">View more below</p></div>
+                    <form id="message-form">
+                        <div class="chat-area">
+                        <textarea class="chat-input col-11" style="resize:none;" name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="chat-button justify-content-end d-flex">
+                        <button class="btn btn-danger btn-sm mb-5">Chat</button>
+                        </div>
+                    </form>
+                </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+
