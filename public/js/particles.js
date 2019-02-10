@@ -7,9 +7,10 @@
 /* v2.0.0
 /* ----------------------------------------------- */
 
-var pJS = function(tag_id, params){
-
-  var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
+var pJS = function(tag_id, params) {
+  var canvas_el = document.querySelector(
+    "#" + tag_id + " > .particles-js-canvas-el"
+  );
 
   /* particles.js variables with default values */
   this.pJS = {
@@ -27,19 +28,19 @@ var pJS = function(tag_id, params){
         }
       },
       color: {
-        value: '#fff'
+        value: "#fff"
       },
       shape: {
-        type: 'circle',
+        type: "circle",
         stroke: {
           width: 0,
-          color: '#ff0000'
+          color: "#ff0000"
         },
         polygon: {
           nb_sides: 5
         },
         image: {
-          src: '',
+          src: " ",
           width: 100,
           height: 100
         }
@@ -74,10 +75,10 @@ var pJS = function(tag_id, params){
       move: {
         enable: true,
         speed: 2,
-        direction: 'none',
+        direction: "none",
         random: false,
         straight: false,
-        out_mode: 'out',
+        out_mode: "out",
         bounce: false,
         attract: {
           enable: false,
@@ -88,48 +89,48 @@ var pJS = function(tag_id, params){
       array: []
     },
     interactivity: {
-      detect_on: 'canvas',
+      detect_on: "canvas",
       events: {
         onhover: {
           enable: true,
-          mode: 'grab'
+          mode: "grab"
         },
         onclick: {
           enable: true,
-          mode: 'push'
+          mode: "push"
         },
         resize: true
       },
       modes: {
-        grab:{
+        grab: {
           distance: 100,
-          line_linked:{
+          line_linked: {
             opacity: 1
           }
         },
-        bubble:{
+        bubble: {
           distance: 200,
           size: 80,
           duration: 0.4
         },
-        repulse:{
+        repulse: {
           distance: 200,
           duration: 0.4
         },
-        push:{
+        push: {
           particles_nb: 4
         },
-        remove:{
+        remove: {
           particles_nb: 2
         }
       },
-      mouse:{}
+      mouse: {}
     },
     retina_detect: false,
     fn: {
       interact: {},
       modes: {},
-      vendors:{}
+      vendors: {}
     },
     tmp: {}
   };
@@ -137,7 +138,7 @@ var pJS = function(tag_id, params){
   var pJS = this.pJS;
 
   /* params settings */
-  if(params){
+  if (params) {
     Object.deepExtend(pJS, params);
   }
 
@@ -153,14 +154,11 @@ var pJS = function(tag_id, params){
     mode_repulse_distance: pJS.interactivity.modes.repulse.distance
   };
 
-
-  pJS.fn.retinaInit = function(){
-
-    if(pJS.retina_detect && window.devicePixelRatio > 1){
-      pJS.canvas.pxratio = window.devicePixelRatio; 
+  pJS.fn.retinaInit = function() {
+    if (pJS.retina_detect && window.devicePixelRatio > 1) {
+      pJS.canvas.pxratio = window.devicePixelRatio;
       pJS.tmp.retina = true;
-    } 
-    else{
+    } else {
       pJS.canvas.pxratio = 1;
       pJS.tmp.retina = false;
     }
@@ -169,18 +167,22 @@ var pJS = function(tag_id, params){
     pJS.canvas.h = pJS.canvas.el.offsetHeight * pJS.canvas.pxratio;
 
     pJS.particles.size.value = pJS.tmp.obj.size_value * pJS.canvas.pxratio;
-    pJS.particles.size.anim.speed = pJS.tmp.obj.size_anim_speed * pJS.canvas.pxratio;
+    pJS.particles.size.anim.speed =
+      pJS.tmp.obj.size_anim_speed * pJS.canvas.pxratio;
     pJS.particles.move.speed = pJS.tmp.obj.move_speed * pJS.canvas.pxratio;
-    pJS.particles.line_linked.distance = pJS.tmp.obj.line_linked_distance * pJS.canvas.pxratio;
-    pJS.interactivity.modes.grab.distance = pJS.tmp.obj.mode_grab_distance * pJS.canvas.pxratio;
-    pJS.interactivity.modes.bubble.distance = pJS.tmp.obj.mode_bubble_distance * pJS.canvas.pxratio;
-    pJS.particles.line_linked.width = pJS.tmp.obj.line_linked_width * pJS.canvas.pxratio;
-    pJS.interactivity.modes.bubble.size = pJS.tmp.obj.mode_bubble_size * pJS.canvas.pxratio;
-    pJS.interactivity.modes.repulse.distance = pJS.tmp.obj.mode_repulse_distance * pJS.canvas.pxratio;
-
+    pJS.particles.line_linked.distance =
+      pJS.tmp.obj.line_linked_distance * pJS.canvas.pxratio;
+    pJS.interactivity.modes.grab.distance =
+      pJS.tmp.obj.mode_grab_distance * pJS.canvas.pxratio;
+    pJS.interactivity.modes.bubble.distance =
+      pJS.tmp.obj.mode_bubble_distance * pJS.canvas.pxratio;
+    pJS.particles.line_linked.width =
+      pJS.tmp.obj.line_linked_width * pJS.canvas.pxratio;
+    pJS.interactivity.modes.bubble.size =
+      pJS.tmp.obj.mode_bubble_size * pJS.canvas.pxratio;
+    pJS.interactivity.modes.repulse.distance =
+      pJS.tmp.obj.mode_repulse_distance * pJS.canvas.pxratio;
   };
-
-
 
   /* ---------- pJS functions - canvas ------------ */
 
