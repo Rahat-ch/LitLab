@@ -1,4 +1,4 @@
-window.onload=function() {
+// window.onload=function() {
 // var particlesJS = require('particle.js')
 
 // Get references to page elements
@@ -189,4 +189,4 @@ if(document.getElementById("particles-js")) {
   });
 }
 
-}
+// }
