@@ -1,6 +1,9 @@
 # LitLab
 
-LitLab is a collaborative writing tool that allows anyone to create awesome stories, song lyrics, poetry to share with the world. Try out our MVP developed by the four of us in just under two weeks.
+LitLab is a concept collaborative writing tool that allows anyone to create awesome stories with others around the world. Try out our MVP developed by the LitLab team in just under two weeks.
+
+## Note before trying
+This concept currently covers a global chat room and allows for users to collaborate on stories in real time, however, final post content, other than title and description will not be saved in the database. Future versions will include the ability to create Poems and Song lyrics as well.
 
 ## Deployment
 
@@ -9,7 +12,11 @@ The live project can be viewed here: https://litlab.herokuapp.com/
 ## Test Accounts
 You can sign up for your own account or use one of the accounts below to test the app:
 
-(add test accounts here)
+email: demouser@gmail.com
+password: blahblah
+
+email: anotherdemo@gmail.com
+password: blahblah
 
 ## Built With
 
@@ -17,6 +24,7 @@ You can sign up for your own account or use one of the accounts below to test th
 * CSS
 * JavaScript
 * jQuery
+* Particles JS
 * Sequelize
 * MySql Database
 * Passport.js
@@ -27,9 +35,18 @@ You can sign up for your own account or use one of the accounts below to test th
 Link to InVision prototype: https://projects.invisionapp.com/share/D5Q6XT2W82E#/screens/343287571_signin
 
 
-## How to use App
+## How to use our App
 
-(Once live add screenshots and instructions here)
+* Use one of the above accounts to login or create a new username with our sign up feature.
+![How to Sign up](https://media.giphy.com/media/cYVOiCtLff6litSm6Z/giphy.gif "Sign up")
+* Have a friend also log in or use one of our test accounts above to log in on another window!
+* Use our global chat feature to speak with other members currently logged in!
+![Real Time Chat](https://media.giphy.com/media/yv3NHb664z4GyCoI45/giphy.gif "Real Time Chat")
+* Create a new story by navigating to create and then new story.
+![Create a Story](https://media.giphy.com/media/1gQsVxKoL5IcT1dDSK/giphy.gif "Create a Story")
+* Collaborate with others in real time!
+
+![Real Time Editor](https://media.giphy.com/media/28OCBQV1TSMBu0l3j8/giphy.gif "Real Time Editor")
 
 ## Authors
 
